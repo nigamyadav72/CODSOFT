@@ -6,9 +6,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(children: [Center(
-        
-        child: Text('hello world'))]),
+      body: Row(
+        children: [
+          Center(child: Text('hello world')),
+          Image.asset('image.jpg'),
+        ],
+      ),
     );
   }
 }
