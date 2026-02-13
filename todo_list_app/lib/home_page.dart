@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.table_rows),
+        leading: Icon(Icons.menu),
         actions: [Icon(Icons.search), Icon(Icons.notifications)],
       ),
       body: Padding(
@@ -24,6 +24,8 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 20),
             TextField(
               decoration: InputDecoration(
+                prefixIcon: Icon(Icons.search),
+                suffixIcon: Icon(Icons.tune),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(40)),
                 ),
