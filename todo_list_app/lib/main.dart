@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_app/home_page.dart';
+import 'package:todo_list_app/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'TO-DO App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(
-        useMaterial3: true
-      ),
-      home: const HomePage() ,
+      theme: ThemeData(useMaterial3: true),
+      home: WelcomePage(),
     );
   }
 }
