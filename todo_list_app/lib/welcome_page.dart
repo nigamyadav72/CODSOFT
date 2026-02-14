@@ -15,38 +15,36 @@ class WelcomePage extends StatelessWidget {
           ),
         ),
         child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 42,
-                    height: 42,
-                    decoration: BoxDecoration(
-                      color: Colors.black87,
-                      shape: BoxShape.circle,
+          child: Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: 42,
+                      height: 42,
+                      decoration: BoxDecoration(
+                        color: Colors.black87,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.play_arrow,
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white,
-                      size: 20,
+                    SizedBox(width: 10),
+                    Text(
+                      'How it works',
+                      style: TextStyle(fontSize: 16, color: Colors.black87),
                     ),
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    'How it works',
-                    style: TextStyle(fontSize: 16, color: Colors.black87),
-                  ),
-                ],
-              ),
-              Container(
-                width: 200, 
-                height: 200,
-                
-
-              ),
-            ],
+                  ],
+                ),
+                Container(width: 200, height: 200),
+              ],
+            ),
           ),
         ),
       ),
