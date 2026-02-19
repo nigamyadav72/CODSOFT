@@ -44,8 +44,8 @@ class WelcomePage extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  height: 200,
-                  width: 200,
+                  height: 350,
+                  width: 350,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/image.jpg'),

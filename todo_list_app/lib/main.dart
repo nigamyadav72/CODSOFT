@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list_app/add_edit_task_page.dart';
 import 'package:todo_list_app/welcome_page.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'TO-DO App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
-      home: WelcomePage(),
+      home: AddEditTaskPage(),
     );
   }
 }
