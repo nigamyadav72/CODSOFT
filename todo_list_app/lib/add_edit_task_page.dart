@@ -204,7 +204,60 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
                       children: [
                         Icon(Icons.calendar_today, color: Color(0xFF7C6FDC)),
                         SizedBox(width: 12),
+                        Text(
+                          _dueDate != null
+                              ? DateFormat(
+                                  'EEEE, MMMM dd, yyyy',
+                                ).format(_dueDate!)
+                              : 'Select due date',
+                          style: TextStyle(
+                            color: _dueDate != null
+                                ? Colors.black87
+                                : Colors.grey,
+                            fontSize: 15,
+                          ),
+                        ),
+                        Spacer(),
+                        if (_dueDate != null)
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _dueDate = null;
+                              });
+                            },
+                            child: Icon(
+                              Icons.close,
+                              color: Colors.grey,
+                              size: 20,
+                            ),
+                          ),
                       ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+
+                //save button
+                Container(
+                  width: double.infinity,
+                  height: 56,
+                  child: ElevatedButton(
+                    onPressed: _saveTask,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF7C6FDC),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                      elevation: 8,
+                      shadowColor: Color(0xFF7C6FDC).withOpacity(0.3),
+                    ),
+                    child: Text(
+                      isEditMode ? 'Update Task' : 'Create Task',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -231,9 +284,26 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
             color: isSelected ? color : Colors.white,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: isSelected ? color : Colors.grey,
+              color: isSelected ? color : Colors.grey[300]!,
               width: 2,
             ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.flag,
+                color: isSelected ? Colors.white : color,
+                size: 18,
+              ),
+              SizedBox(width: 6),
+              Text(
+                priority,
+                style: TextStyle(
+                  color: isSelected ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
           ),
         ),
       ),
